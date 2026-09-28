@@ -1,0 +1,14 @@
+{
+  "name": "codechef-campus-club-platform",
+  "version": "1.0.0",
+  "description": "Production-grade College Coding Club Event Management & Competitive Programming Website for CodeChef Campus Club",
+  "private": true,
+  "scripts": {
+    "server": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "seed": "npm --prefix server run seed",
+    "build": "npm --prefix client run build",
+    "test": "npm --prefix server run test",
+    "start": "npm --prefix server run start"
+  }
+}
