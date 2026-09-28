@@ -1,7 +1,9 @@
 // Centralized API client service
 
-const rawApiBase = import.meta.env.VITE_API_URL || '/api';
-const API_BASE = rawApiBase.trim().replace(/\/+$/, '');
+const rawApiBase = (import.meta.env.VITE_API_URL || '/api').trim().replace(/\/+$/, '');
+
+// Ensure /api is included at the end of the base URL exactly once without duplication
+export const API_BASE = rawApiBase.endsWith('/api') ? rawApiBase : `${rawApiBase}/api`;
 
 export class ApiError extends Error {
   constructor(message, status, data) {
