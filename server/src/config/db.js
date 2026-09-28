@@ -1,4 +1,10 @@
 import mongoose from 'mongoose';
+import dns from 'dns';
+
+// Fix for Windows & restrictive ISP environments resolving Atlas SRV records
+try {
+  dns.setServers(['8.8.8.8', '1.1.1.1']);
+} catch (e) {}
 
 export const connectDB = async () => {
   const isProduction = process.env.NODE_ENV === 'production';
